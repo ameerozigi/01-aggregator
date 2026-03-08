@@ -1,0 +1,27 @@
+{
+  "name": "o1-aggregator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "hardhat compile",
+    "deploy:buildbear": "hardhat run --network buildbear scripts/deploy.ts",
+    "deploy:base": "hardhat run --network baseSepolia scripts/deploy.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.5",
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@types/node": "^25.3.3",
+    "dotenv": "^17.3.1",
+    "ethers": "^6.16.0",
+    "hardhat": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

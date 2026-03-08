@@ -1,0 +1,22 @@
+.env
+*.env
+balance.txt
+
+node_modules/
+
+# Hardhat
+artifacts/
+cache/
+coverage/
+
+# Backend build
+backend/dist/
+
+# Frontend build
+frontend/dist/
+frontend/.vite/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/

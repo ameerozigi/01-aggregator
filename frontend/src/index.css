@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+.o1-theme .card {
+  @apply rounded-2xl p-6 bg-white/5 border border-white/10 shadow-xl backdrop-blur;
+}
+
+.o1-theme .btn-primary {
+  @apply rounded-lg bg-gradient-to-r from-blue-600 to-blue-400 text-white px-4 py-2 hover:opacity-90 transition;
+}
+
+.o1-theme .btn-secondary {
+  @apply rounded-lg border border-white/10 bg-white/5 px-4 py-2 hover:bg-white/10 transition;
+}
