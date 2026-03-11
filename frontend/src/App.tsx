@@ -107,6 +107,14 @@ function AppInner() {
   const [route, setRoute] = useState<Route | undefined>(undefined);
   const [loading, setLoading] = useState(false);
 
+  function flipTokens() {
+    const a = tokenIn;
+    const b = tokenOut;
+    setTokenIn(b);
+    setTokenOut(a);
+    setRoute(undefined);
+  }
+
   async function getQuote() {
     if (!tokenIn || !tokenOut || !amount) return;
     setLoading(true);
@@ -148,10 +156,20 @@ function AppInner() {
           <ConnectButton />
         </div>
 
-        <div className="rounded-2xl p-6 space-y-4 bg-white/5 border border-white/10 shadow-xl backdrop-blur">
+        <div className="rounded-2xl p-6 space-y-4 bg-white/5 border border-white/10 shadow-xl backdrop-blur overflow-hidden">
           <TokenSelector label="From" value={tokenIn} onChange={setTokenIn} />
           <AmountInput amount={amount} onChange={setAmount} />
           <TokenSelector label="To" value={tokenOut} onChange={setTokenOut} />
+
+          <div className="flex justify-center">
+            <button
+              onClick={flipTokens}
+              className="rounded-full bg-white/10 border border-white/10 px-3 py-1 text-white hover:bg-white/20 transition"
+              aria-label="Flip tokens"
+            >
+              ↕
+            </button>
+          </div>
 
           <Slippage slippage={slippage} setSlippage={setSlippage} />
 
